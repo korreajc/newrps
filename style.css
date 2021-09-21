@@ -14,7 +14,7 @@ img{
     border: 6px solid #1B1B1E;
     border-radius: 4px;
 }
-  
+
 h1{
     color: #1B1B1E;
     font-family:monospace;
@@ -55,4 +55,12 @@ button{
 
 #compScoreText{
     width: 120px;
+}
+
+button:hover{
+    background-color: white;
+}
+
+#playerScoreNum, #compScoreNum{
+    font-size: 20px;
 }

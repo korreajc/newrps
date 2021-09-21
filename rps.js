@@ -40,14 +40,27 @@ function playRound(playerSelection, computerSelection){
     return outcomeMarker;
 }
 
+function changeCompImg(image){
+    if(image == "paper"){
+        document.getElementById("compChoice").src = "paper.png";
+    }else if(image == "rock"){
+        document.getElementById("compChoice").src = "rock.png";
+    }else if(image == "scissors"){
+        document.getElementById("compChoice").src = "scissors.jpeg";
+    }
+}
+
 function playerChoiceRock(){
     compChoice = computerPlay();
+    changeCompImg(compChoice);
     const outcome = playRound("rock", compChoice);
+    document.getElementById("playerChoice").src = "rock.png";
     if(outcome == 0){
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("compScoreNum").innerHTML = marker;
+
     }else if(outcome == 2){
         let marker = document.getElementById("playerScoreNum").innerHTML;
         parseInt(marker);
@@ -58,7 +71,9 @@ function playerChoiceRock(){
 
 function playerChoicePaper(){
     compChoice = computerPlay();
+    changeCompImg(compChoice);
     const outcome = playRound("paper", compChoice);
+    document.getElementById("playerChoice").src = "paper.png";
     if(outcome == 0){
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);
@@ -74,7 +89,9 @@ function playerChoicePaper(){
 
 function playerChoiceScissors(){
     compChoice = computerPlay();
+    changeCompImg(compChoice);
     const outcome = playRound("scissors", compChoice);
+    document.getElementById("playerChoice").src = "scissors.jpeg";
     if(outcome == 0){
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);

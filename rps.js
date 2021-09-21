@@ -60,15 +60,24 @@ function changePlayerImg(image){
     }
 }
 
-function playAgain(){
+function createPlayAgainBtn(){
     const newDiv = document.createElement("button");
     const newContent = document.createTextNode("PLAY AGAIN?");
     newDiv.appendChild(newContent);
-
+    newDiv.setAttribute("id", "btn");
     const currentDiv = document.getElementById("results");
-    document.body.insertBefore(newDiv, currentDiv);
+    document.body.insertBefore(newDiv, currentDiv);   
+    
 }
 
+function gameReset(){
+    document.getElementById("compScoreNum").innerHTML = "0";
+    document.getElementById("playerScoreNum").innerHTML = "0";
+    document.getElementById("resultSectionNum").innerHTML = "0";
+
+    const element = document.getElementById("btn");
+    element.remove();
+}
 
 
 function playerChoice(hand){
@@ -84,8 +93,8 @@ function playerChoice(hand){
         document.getElementById("compScoreNum").innerHTML = marker;
 
         if(marker == 5){
-            document.getElementById("resultSectionNum").innerHTML = "YOU LOST THIS ROUND";
-            playAgain();
+            document.getElementById("resultSectionNum").innerHTML = "YOU LOST THIS GAME";
+            createPlayAgainBtn();
         }
 
     }else if(outcome == 2){
@@ -96,8 +105,8 @@ function playerChoice(hand){
         document.getElementById("playerScoreNum").innerHTML = marker;
 
         if(marker == 5){
-            document.getElementById("resultSectionNum").innerHTML = "YOU WON THIS ROUND";
-            playAgain();
+            document.getElementById("resultSectionNum").innerHTML = "YOU WON THIS GAME";
+            createPlayAgainBtn();
         }
     }else if(outcome == 1){
         document.getElementById("currentOutcome").innerHTML = "TIE";
@@ -118,5 +127,9 @@ document.getElementById("scissorsButton").onclick = function(){
     playerChoice(scissors);
 }
 
-
+document.addEventListener('click',function(e){
+    if(e.target && e.target.id== 'btn'){
+          gameReset();
+     }
+ });
 

@@ -50,11 +50,32 @@ function changeCompImg(image){
     }
 }
 
-function playerChoiceRock(){
+function changePlayerImg(image){
+    if(image == "paper"){
+        document.getElementById("playerChoice").src = "paper.png";
+    }else if(image == "rock"){
+        document.getElementById("playerChoice").src = "rock.png";
+    }else if(image == "scissors"){
+        document.getElementById("playerChoice").src = "scissors.jpeg";
+    }
+}
+
+function playAgain(){
+    const newDiv = document.createElement("button");
+    const newContent = document.createTextNode("PLAY AGAIN?");
+    newDiv.appendChild(newContent);
+
+    const currentDiv = document.getElementById("results");
+    document.body.insertBefore(newDiv, currentDiv);
+}
+
+
+
+function playerChoice(hand){
     compChoice = computerPlay();
     changeCompImg(compChoice);
-    const outcome = playRound("rock", compChoice);
-    document.getElementById("playerChoice").src = "rock.png";
+    changePlayerImg(hand);
+    const outcome = playRound(hand, compChoice);
     if(outcome == 0){
         document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
         let marker = document.getElementById("compScoreNum").innerHTML;
@@ -62,67 +83,40 @@ function playerChoiceRock(){
         marker++;
         document.getElementById("compScoreNum").innerHTML = marker;
 
+        if(marker == 5){
+            document.getElementById("resultSectionNum").innerHTML = "YOU LOST THIS ROUND";
+            playAgain();
+        }
+
     }else if(outcome == 2){
         document.getElementById("currentOutcome").innerHTML = "ROUND WON";
         let marker = document.getElementById("playerScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("playerScoreNum").innerHTML = marker;
+
+        if(marker == 5){
+            document.getElementById("resultSectionNum").innerHTML = "YOU WON THIS ROUND";
+            playAgain();
+        }
     }else if(outcome == 1){
         document.getElementById("currentOutcome").innerHTML = "TIE";
-
     }
 }
 
-function playerChoicePaper(){
-    compChoice = computerPlay();
-    changeCompImg(compChoice);
-    const outcome = playRound("paper", compChoice);
-    document.getElementById("playerChoice").src = "paper.png";
-    if(outcome == 0){
-        document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
-        let marker = document.getElementById("compScoreNum").innerHTML;
-        parseInt(marker);
-        marker++;
-        document.getElementById("compScoreNum").innerHTML = marker;
-    }else if(outcome == 2){
-        document.getElementById("currentOutcome").innerHTML = "ROUND WON";
-        let marker = document.getElementById("playerScoreNum").innerHTML;
-        parseInt(marker);
-        marker++;
-        document.getElementById("playerScoreNum").innerHTML = marker;
-    }else if(outcome == 1){
-        document.getElementById("currentOutcome").innerHTML = "TIE";
+const rock = "rock";
+const paper = "paper";
+const scissors = "scissors";
 
-    }
+document.getElementById("rockButton").onclick = function(){
+    playerChoice(rock);
 }
-
-function playerChoiceScissors(){
-    compChoice = computerPlay();
-    changeCompImg(compChoice);
-    const outcome = playRound("scissors", compChoice);
-    document.getElementById("playerChoice").src = "scissors.jpeg";
-    if(outcome == 0){
-        document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
-        let marker = document.getElementById("compScoreNum").innerHTML;
-        parseInt(marker);
-        marker++;
-        document.getElementById("compScoreNum").innerHTML = marker;
-    }else if(outcome == 2){
-        document.getElementById("currentOutcome").innerHTML = "ROUND WON";
-        let marker = document.getElementById("playerScoreNum").innerHTML;
-        parseInt(marker);
-        marker++;
-        document.getElementById("playerScoreNum").innerHTML = marker;
-    }else if(outcome == 1){
-        document.getElementById("currentOutcome").innerHTML = "TIE";
-
-    }
+document.getElementById("paperButton").onclick = function(){
+    playerChoice(paper);
 }
-
-document.getElementById("rockButton").onclick = playerChoiceRock;
-document.getElementById("paperButton").onclick = playerChoicePaper;
-document.getElementById("scissorsButton").onclick = playerChoiceScissors;
+document.getElementById("scissorsButton").onclick = function(){
+    playerChoice(scissors);
+}
 
 
 

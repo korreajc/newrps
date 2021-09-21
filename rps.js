@@ -56,16 +56,21 @@ function playerChoiceRock(){
     const outcome = playRound("rock", compChoice);
     document.getElementById("playerChoice").src = "rock.png";
     if(outcome == 0){
+        document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("compScoreNum").innerHTML = marker;
 
     }else if(outcome == 2){
+        document.getElementById("currentOutcome").innerHTML = "ROUND WON";
         let marker = document.getElementById("playerScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("playerScoreNum").innerHTML = marker;
+    }else if(outcome == 1){
+        document.getElementById("currentOutcome").innerHTML = "TIE";
+
     }
 }
 
@@ -75,15 +80,20 @@ function playerChoicePaper(){
     const outcome = playRound("paper", compChoice);
     document.getElementById("playerChoice").src = "paper.png";
     if(outcome == 0){
+        document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("compScoreNum").innerHTML = marker;
     }else if(outcome == 2){
+        document.getElementById("currentOutcome").innerHTML = "ROUND WON";
         let marker = document.getElementById("playerScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("playerScoreNum").innerHTML = marker;
+    }else if(outcome == 1){
+        document.getElementById("currentOutcome").innerHTML = "TIE";
+
     }
 }
 
@@ -93,15 +103,20 @@ function playerChoiceScissors(){
     const outcome = playRound("scissors", compChoice);
     document.getElementById("playerChoice").src = "scissors.jpeg";
     if(outcome == 0){
+        document.getElementById("currentOutcome").innerHTML = "ROUND LOST";
         let marker = document.getElementById("compScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("compScoreNum").innerHTML = marker;
     }else if(outcome == 2){
+        document.getElementById("currentOutcome").innerHTML = "ROUND WON";
         let marker = document.getElementById("playerScoreNum").innerHTML;
         parseInt(marker);
         marker++;
         document.getElementById("playerScoreNum").innerHTML = marker;
+    }else if(outcome == 1){
+        document.getElementById("currentOutcome").innerHTML = "TIE";
+
     }
 }
 

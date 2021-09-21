@@ -33,7 +33,7 @@ button{
 
 .scoresection{
     display: flex;
-    gap: 1000px;
+    gap: 200px;
 }
 
 .compScore, .playerScore, .resultSection{
@@ -63,4 +63,10 @@ button:hover{
 
 #playerScoreNum, #compScoreNum{
     font-size: 20px;
+}
+
+#centerSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

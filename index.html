@@ -5,9 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src = "rps.js"></script>
+    <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    
+    <div class = "title">
+        <h1>ULTIMATE RPS GAME</h1>
+    </div>
+
+    <div class = "middle">
+        <img src = "rock.png" alt = "Computer Choice">
+        <span>VS.</span>
+        <img src = "scissors.jpeg" alt = "Player Choice">
+    </div>
+
+    <div class = buttons>
+        <button type = "button" id = "rockButton">ROCK</button>
+        <button type = "button" id = "paperButton">PAPER</button>
+        <button type = "button" id = "scissorsButton">SCISSORS</button>
+    </div>
+
+    <div class = "scoresection">
+        <div class = "compScore">
+            <p id = "compScoreText">Computer Score</p>
+            <p id = "compScoreNum">0</p>
+        </div>
+        <div class = "playerScore">
+            <p id = "playerScoreText">Player Score</p>
+            <p id = playerScoreNum>0</p>
+        </div>
+    </div>
+
+    <div class = "resultSection">
+        <p id = "resultSectionText">RESULTS</p>
+        <p id =  "resultSectionNum">0</p>
+    </div>
 </body>
+<script src = "rps.js"></script>
+
 </html>

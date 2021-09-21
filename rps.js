@@ -40,43 +40,57 @@ function playRound(playerSelection, computerSelection){
     return outcomeMarker;
 }
 
-
-function game(){
-        let playerMarker = 0;
-        let compMarker = 0;
-
-    for(let i = 0; i < 5; i++){
-        let playSelection = prompt("Choose between rock, paper or scissors.");
-        let compSelection = computerPlay();
-        playSelection.toLowerCase();
-        compSelection.toLowerCase();
-
-        console.log(playSelection);
-        console.log(compSelection);
-
-        let marker = playRound(playSelection, compSelection);
-
-        if(marker == 0){
-            compMarker++;
-            console.log("You lost this round.")
-        }else if(marker == 2){
-            playerMarker++;
-            console.log("You won this round.")
-        }else if(marker == 1){
-            console.log("You guys tied this round.")
-        }
-    }
-
-    console.log(compMarker);
-    console.log(playerMarker);
-
-    if(compMarker > playerMarker){
-        console.log("Computer Wins Game");
-    }else if(playerMarker > compMarker){
-        console.log("Player wins Game")
-    }else if(playerMarker == compMarker){
-        console.log("Tie")
+function playerChoiceRock(){
+    compChoice = computerPlay();
+    const outcome = playRound("rock", compChoice);
+    if(outcome == 0){
+        let marker = document.getElementById("compScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("compScoreNum").innerHTML = marker;
+    }else if(outcome == 2){
+        let marker = document.getElementById("playerScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("playerScoreNum").innerHTML = marker;
     }
 }
 
-game();
+function playerChoicePaper(){
+    compChoice = computerPlay();
+    const outcome = playRound("paper", compChoice);
+    if(outcome == 0){
+        let marker = document.getElementById("compScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("compScoreNum").innerHTML = marker;
+    }else if(outcome == 2){
+        let marker = document.getElementById("playerScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("playerScoreNum").innerHTML = marker;
+    }
+}
+
+function playerChoiceScissors(){
+    compChoice = computerPlay();
+    const outcome = playRound("scissors", compChoice);
+    if(outcome == 0){
+        let marker = document.getElementById("compScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("compScoreNum").innerHTML = marker;
+    }else if(outcome == 2){
+        let marker = document.getElementById("playerScoreNum").innerHTML;
+        parseInt(marker);
+        marker++;
+        document.getElementById("playerScoreNum").innerHTML = marker;
+    }
+}
+
+document.getElementById("rockButton").onclick = playerChoiceRock;
+document.getElementById("paperButton").onclick = playerChoicePaper;
+document.getElementById("scissorsButton").onclick = playerChoiceScissors;
+
+
+

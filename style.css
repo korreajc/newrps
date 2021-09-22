@@ -3,36 +3,57 @@ body{
     flex-direction: column ;
     align-items: center;
     justify-content:center;
-    gap: 10px;
-    background-color: #96031A;
-    font-family:monospace;
+    gap: 20px;
+    background-color: #EFE9E7;
+    font-family: 'Bebas Neue', cursive;
 
 }
 img{
-    width: 400px;
-    height: 250px;
+    width: 200px;
+    height: 150px;
     border: 6px solid #1B1B1E;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
+.middle{
+    display: flex;
+    align-items: center;
+    gap : 20px;
+}
+
+.buttons{
+    display: flex;
+    gap: 100px;
+}
+
+
+
 h1{
-    color: #1B1B1E;
-    font-family:monospace;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
     font-size: 80px;
+    background-color:#111344;;
+    border: 4px solid black;
+    border-radius: 6px;
+    padding: 10px;
 }
 
 button{
-    width: 200px;
+    color: white;
+    width: 100px;
     height: 40px;
-    border: 4px solid #1B1B1E;
-    border-radius: 4px;
-    background-color: #FAA916;
+    border: 2px solid #1B1B1E;
+    border-radius: 6px;
+    background-color: #111344;
     font-size: 20px;
     font-weight: bolder;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .scoresection{
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     gap: 200px;
 }
 
@@ -40,21 +61,27 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
 #playerScoreText, #compScoreText, #resultSectionText{
     font-weight: bolder;
     border: 2px solid black;
+    border-radius: 6px;
     width: 110px;
-    height: 25px;
+    height: 50px;
     text-align: center;
-    line-height: 25px;
-    background-color: #FAA916;
+    line-height: 50px;
+    color: white;
+    background-color: #111344;
 }
 
 #compScoreText{
     width: 120px;
+    margin: 0px 0px;
+}
+
+#compScoreNum, #playerScoreNum, #playerScoreText{
+    margin: 0px 0px;
 }
 
 button:hover{
@@ -62,11 +89,27 @@ button:hover{
 }
 
 #playerScoreNum, #compScoreNum{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #centerSection{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
+#currentScore, #currentOutcome{
+    margin: 0px 0px;
+}
+#vs{
+    font-size: 80px;
+}
+
+#currentScore{
+    font-size: 30px;
+}
+
+#currentOutcome{
+    font-size: 20px;
+}
+

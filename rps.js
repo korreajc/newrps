@@ -42,21 +42,21 @@ function playRound(playerSelection, computerSelection){
 
 function changeCompImg(image){
     if(image == "paper"){
-        document.getElementById("compChoice").src = "paper.png";
+        document.getElementById("compChoice").src = "paperhand.png";
     }else if(image == "rock"){
-        document.getElementById("compChoice").src = "rock.png";
+        document.getElementById("compChoice").src = "rockhand.png";
     }else if(image == "scissors"){
-        document.getElementById("compChoice").src = "scissors.jpeg";
+        document.getElementById("compChoice").src = "scissorshand.png";
     }
 }
 
 function changePlayerImg(image){
     if(image == "paper"){
-        document.getElementById("playerChoice").src = "paper.png";
+        document.getElementById("playerChoice").src = "paperhand.png";
     }else if(image == "rock"){
-        document.getElementById("playerChoice").src = "rock.png";
+        document.getElementById("playerChoice").src = "rockhand.png";
     }else if(image == "scissors"){
-        document.getElementById("playerChoice").src = "scissors.jpeg";
+        document.getElementById("playerChoice").src = "scissorshand.png";
     }
 }
 
